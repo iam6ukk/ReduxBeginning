@@ -19,11 +19,11 @@ class BookDetail extends Component {
   }
 }
 
-//헬퍼 함수
 function mapStateToProps(state) {
   return {
     book: state.activeBook,
   };
+  // activeBook state를 book props로 매핑
 }
 
 export default connect(mapStateToProps)(BookDetail);
