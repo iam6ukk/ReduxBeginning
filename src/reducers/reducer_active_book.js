@@ -1,5 +1,4 @@
 // 리듀서 요소 : state, action
-// state 요소는 애플리케이션 요소 X, 리듀서 권한 가짐
 // action을 통해 Reducer가 application state 변화
 // dispatch될 때마다 모든 Reducer로 흘러감
 export default function (state = null, action) {

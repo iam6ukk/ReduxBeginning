@@ -1,4 +1,5 @@
 export default function () {
+  // BooksReducer 생성
   return [
     { title: "Javascript: The Good Parts", pages: 101 },
     { title: "Harry Potter", pages: 39 },

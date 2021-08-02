@@ -30,8 +30,7 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state) {
-  // 애플리케이션의 state를 요소로 가짐
-  // state -> 책 배열과 Active Book을 가짐
+  // 애플리케이션의 state를 요소로 가짐 (책 배열과 Active Book)
   // 반환되는 것 무엇이든지 booklist안의 props 형태로 보여짐
   return {
     books: state.books,
@@ -42,11 +41,11 @@ function mapStateToProps(state) {
 
 // 이 함수로 반환받은 것이 BookList 컨테이너의 props로 연결됨
 function mapDispatchToProps(dispatch) {
+  // selectBook이 호출될 때마다, 결과는 리듀서로 전달되어야 함 -> bind~와 dispatch의 역할
+  // mapStateToProps와 같은 방식으로 이를 반환, 컨테이너의 props로 연결 (this.props.selectBook)
   return bindActionCreators({ selectBook: selectBook }, dispatch);
-  // selectBook이 호출될 때마다, 결과는 리듀서로 전달되어야 함
-  // mapStateToprops와 같은 방식으로 이를 반환, 컨테이너의 props로 연결
-  // 이 함수로 반환받는 것은 첫번째 요소로 전달되는 무엇이든 컨테이너의 props로 이용 가능
-  // this.props.selectBook
+  // 선택된 책 타입과 payload 리턴 할 수 있게 해줌
+  // selectBook에서 호출된 액션 가져와서 모든 reducer에게 뿌려줌
 }
 
 // 컴포넌트에서 컨테이너로 BookList를 바꿔야하는데,
