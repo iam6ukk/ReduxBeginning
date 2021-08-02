@@ -6,6 +6,7 @@ class BookDetail extends Component {
     if (!this.props.book) {
       return <div>Select a book to get started.</div>;
     }
+    // 책 클릭하면 애플리케이션 state가 업데이트 되고 컨테이너 리렌더링
 
     return (
       <div>
@@ -17,6 +18,7 @@ class BookDetail extends Component {
   }
 }
 
+//헬퍼 함수
 function mapStateToProps(state) {
   return {
     book: state.activeBook,
