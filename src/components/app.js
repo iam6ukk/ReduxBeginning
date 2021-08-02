@@ -10,6 +10,7 @@ export default class App extends Component {
       <div>
         <BookList />
         <BookDetail />
+        {/* 렌더링 */}
       </div>
     );
   }

@@ -13,12 +13,12 @@ class BookList extends Component {
         <li
           key={book.title}
           onClick={() => this.props.selectBook(book)}
-          // 클릭될 때마다 props 부분 호출되고 book 전달
+          // 클릭될 때마다 액션 발생, book 전달
           className="list-group-item"
         >
           {book.title}
+          {/* 책 타이틀 출력 */}
         </li>
-        // 책 제목 작성
       );
     });
   }
@@ -48,7 +48,5 @@ function mapDispatchToProps(dispatch) {
   // selectBook에서 호출된 액션 가져와서 모든 reducer에게 뿌려줌
 }
 
-// 컴포넌트에서 컨테이너로 BookList를 바꿔야하는데,
-// 이는 새로운 disaptch 메소드인 selectBook을 알아야 하며, props로 이용 가능
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
 // connect 함수는 이 컴포넌트와 함수를 가져와 컨테이너 반환
